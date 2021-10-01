@@ -1,8 +1,8 @@
 <?php
     $servername = "localhost";
-    $username = "new_root";
-    $password = "";
-    $$db = "test_esoft";
+    $username = "root";
+    $password = "1";
+    $db = "test_esoft";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $db);
@@ -12,4 +12,5 @@
         die("Connection failed: " . $conn->connect_error);
     } 
     echo "Connected successfully";
+
 ?>
