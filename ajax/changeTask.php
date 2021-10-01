@@ -1,5 +1,6 @@
 <?php 
-    require_once('libs/rb-mysql.php');
+    //require_once('libs/rb-mysql.php');
+    require('connect_db.php');
 
     session_start();
 
@@ -20,7 +21,7 @@
         $endDate = "$endDate[2]-$endDate[1]-$endDate[0]";
         $updateDate = date("Y-m-d H:i:s");
 
-        R::setup( 'mysql:host=localhost;dbname=test_esoft','root', '');
+        //R::setup( 'mysql:host=localhost;dbname=test_esoft','root', '');
 
         $task = R::findOne('task', ' WHERE id = ?', array($id));
 

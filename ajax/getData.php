@@ -1,11 +1,12 @@
 <?php
-    require_once('libs/rb-mysql.php');
+    //require_once('libs/rb-mysql.php');
+    require('connect_db.php');
 
     session_start();
 
     $me = $_SESSION['user'];
 
-    R::setup( 'mysql:host=localhost;dbname=test_esoft','root', '');
+    //R::setup( 'mysql:host=localhost;dbname=test_esoft','root', '');
     $task = R::findOne('task', ' WHERE id = ?', array($_POST['id']));
     R::close();
 

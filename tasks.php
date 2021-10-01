@@ -1,13 +1,14 @@
 <?php
-    require_once('libs/rb-mysql.php');
-
+    //require_once('libs/rb-mysql.php');
+    
     session_start();
     if(!isset($_SESSION['user'])) 
         header("location: signin.php");
 
     $me = $_SESSION['user'];
 
-    R::setup( 'mysql:host=localhost;dbname=test_esoft','root', '');
+    require('connect_db.php');
+    //R::setup( 'mysql:host=localhost;dbname=test_esoft','root', '');
     $me_rec = R::findOne('user', ' WHERE id = ? ', array($me));
     $users = R::findAll('user', ' WHERE supervisor = ? or id = ?', array($me, $me));
     R::close();

@@ -1,5 +1,7 @@
 <?php 
-    require_once('libs/rb-mysql.php');
+    //require_once('libs/rb-mysql.php');
+    require('connect_db.php');
+
 
     $login = filter_var(trim($_POST['login']), FILTER_SANITIZE_STRING);
     $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
@@ -8,7 +10,7 @@
     {
         $password_hash = hash("sha512", $login.$password);
 
-        R::setup( 'mysql:host=localhost;dbname=test_esoft','root', '');
+        //R::setup( 'mysql:host=localhost;dbname=test_esoft','root', '');
         $user = R::findOne( 'user', 'login=?', array($login));
 
         if (!$user){

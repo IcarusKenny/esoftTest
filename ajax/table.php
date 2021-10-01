@@ -1,5 +1,6 @@
 <?php 
-    require_once('libs/rb-mysql.php');
+    //require_once('libs/rb-mysql.php');
+    require('connect_db.php');
 
     session_start();
 
@@ -8,7 +9,7 @@
     $filter = $_POST['filter'];
 
 
-    R::setup( 'mysql:host=localhost;dbname=test_esoft','root', '');
+    //R::setup( 'mysql:host=localhost;dbname=test_esoft','root', '');
     $users = R::findAll('user');
 
     switch($filter){
