@@ -37,17 +37,17 @@
 
         R::exec($user);
     }
-    // if(count(R::getAll( 'SELECT * FROM user' )) == 0){
-    //     $password = "1";
-    //     $password_hash = hash("sha512", $password);
+    if(count(R::getAll( 'SELECT * FROM user' )) == 0){
+        $password = "1";
+        $password_hash = hash("sha512", $password);
 
-    //     $user = R::dispense('user');
-    //     $user->forename = "Дмитрий";
-    //     $user->surname = "Строич";
-    //     $user->patronymic = "Олегович";
-    //     $user->login = "1";
-    //     $user->password = $password_hash;
-    //     $user->supervisor = 0;
-    //     R::store( $user );
-    // }
+        $user = R::dispense('user');
+        $user->forename = "Дмитрий";
+        $user->surname = "Строич";
+        $user->patronymic = "Олегович";
+        $user->login = "1";
+        $user->password = $password_hash;
+        $user->supervisor = 0;
+        R::store( $user );
+    }
 ?>
