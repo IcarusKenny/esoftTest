@@ -1,0 +1,139 @@
+.sign{
+    background-color: yellowgreen;
+    width: fit-content;
+    padding: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
+    border-radius: 10%;
+}
+
+input, button, a, p, select{
+    display: block;
+    margin: 5px 0;
+}
+.success{
+    color: green;
+}
+.error{
+    color: red;
+}
+
+
+.modalBg {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal {
+    margin: 10% 10%;
+    padding: 20px;
+    background-color: white;
+}
+
+.x {
+    color: rgba(0,0,0,0.5);
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.x:hover{
+    color: black;
+    cursor: pointer;
+}
+
+
+.tab_name:hover, .sub_name:hover{
+    cursor: pointer;
+}
+.tab_radio, .sub_radio{
+    display: none;
+}
+.tab_radio:checked + label,
+.sub_radio:checked + label{
+    font-weight: bold;
+}
+
+.tab_names{
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tab_name{
+    background-color: aqua;
+    padding: 10px 20px;
+    border-radius: 10%;
+}
+
+.sub{
+    display: none;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+}
+
+.sub_name{
+    background-color: #21d1d1;
+    padding: 10px 20px;
+    border-radius: 10%;
+}
+
+.tab{
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10%;
+    margin-top: 30px;
+}
+
+#table{
+    width: 800px;
+}
+
+table, td, th{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td, th{
+    border: 2px solid black;
+    padding: 5px;
+}
+th{
+    background-color: cadetblue;
+}
+tr:not(:first-child):hover{
+    background-color: rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.expired{
+    color: red;
+}
+.done{
+    color: green;
+}
+.other{
+    color: gray;
+}
+
+
+.me{
+    text-align: right;
+    width: 15%;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+}
+#createTask{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 400px;
+}
