@@ -2,9 +2,12 @@
     require_once('libs/rb-mysql.php');
     //R::setup( 'mysql:host=yvu4xahse0smimsc.chr7pe7iynqr.eu-west-1.rds.amazonaws.com; dbname=k9zsbj71aksi2up5','ixc1my3frytj29kr', 'zc6mpj1c9fzvgzca');
 
-    R::setup('mysql:host=localhost;dbname=esoft','francesco', 'some_pass');
+    $host = 'localhost';
+    $dbName = 'test_esoft';
+    $user = 'root';
+    $pass = '';
 
-    //R::setup( 'mysql:host=185.103.109.52;dbname=test_esoft','root', '');
+    R::setup("mysql:host=$host;dbname=$dbName","$user", "$pass");
 
     $listOfTables = R::inspect();
 
@@ -39,13 +42,14 @@
     }
     if(count(R::getAll( 'SELECT * FROM user' )) == 0){
         $password = "1";
-        $password_hash = hash("sha512", $password);
+        $login = "1";
+        $password_hash = hash("sha512", $login.$password);
 
         $user = R::dispense('user');
         $user->forename = "Дмитрий";
         $user->surname = "Строич";
         $user->patronymic = "Олегович";
-        $user->login = "1";
+        $user->login = $login;
         $user->password = $password_hash;
         $user->supervisor = 0;
         R::store( $user );

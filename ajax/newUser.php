@@ -1,6 +1,6 @@
 <?php 
     //require_once('libs/rb-mysql.php');
-    require('connect_db.php');
+    require_once(__DIR__ . '/../connect_db.php');
 
     $forename = filter_var(trim($_POST['forename']), FILTER_SANITIZE_STRING);
     $surname = filter_var(trim($_POST['surname']), FILTER_SANITIZE_STRING);
