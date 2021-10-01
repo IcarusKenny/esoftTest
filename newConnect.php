@@ -1,10 +1,11 @@
 <?php
     $servername = "localhost";
-    $username = "root";
+    $username = "new_root";
     $password = "";
+    $$db = "test_esoft";
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password);
+    $conn = new mysqli($servername, $username, $password, $db);
 
     // Check connection
     if ($conn->connect_error) {
