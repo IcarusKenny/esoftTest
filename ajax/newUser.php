@@ -9,7 +9,7 @@
     $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
     $supervisor = $_POST['supervisor'];
 
-    if($forename && $surname && $patronymic && $login && $password && $supervisor)
+    if($forename && $surname && $patronymic && $login && $password)
     {
         $password_hash = hash("sha512", $login.$password);
 
@@ -27,7 +27,10 @@
             $user->patronymic = $patronymic;
             $user->login = $login;
             $user->password = $password_hash;
-            $user->supervisor = $supervisor;
+            if($supervisor)
+                $user->supervisor = $supervisor;
+            else
+                $user->supervisor = 0;
             R::store( $user );
             R::close();
             echo "<span class='success'>Регистрация прошла успешно!</span>";
