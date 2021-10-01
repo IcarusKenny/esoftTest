@@ -1,5 +1,6 @@
 <?php
     //require_once('libs/rb-mysql.php');
+    require('connect_db.php');
     
     session_start();
     if(!isset($_SESSION['user'])) 
@@ -7,11 +8,9 @@
 
     $me = $_SESSION['user'];
 
-    require('connect_db.php');
     //R::setup( 'mysql:host=localhost;dbname=test_esoft','root', '');
     $me_rec = R::findOne('user', ' WHERE id = ? ', array($me));
     $users = R::findAll('user', ' WHERE supervisor = ? or id = ?', array($me, $me));
-    R::close();
 ?>
 
 <html>
